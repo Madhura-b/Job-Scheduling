@@ -14,24 +14,15 @@ The needed operations are:
 2. Print (buildingNum1, buildingNum2) prints all triplets bn, executed_tims, total_time for which buildingNum1 <= bn <= buildingNum2.
 3. Insert (buildingNum,total_time) where buildingNum is different from existing building numbers and executed_time = 0.
  
-In order to complete the given task, you must use a min-heap and a Red-Black Tree (RBT).Also, you may assume that the number of active buildings will not exceed 2000.
+In order to complete the given task, I use a min-heap and a Red-Black Tree (RBT). Assumed that the number of active buildings will not exceed 2000.
  
-A min heap should be used to store (buildingNums,executed_time,total_time) triplets ordered by executed_time. You will need a suitable mechanism to handle duplicate executed_times in your min heap. An RBT should be used store (buildingNums,executed_time,total_time) triplets ordered by buildingNum. You are required to maintain pointers between corresponding nodes in the min-heap and RBT.
+A min heap used to store (buildingNums,executed_time,total_time) triplets ordered by executed_time An RBT  used store (buildingNums,executed_time,total_time) triplets ordered by buildingNum. Pointers maintained  between corresponding nodes in the min-heap and RBT.
  
 Wayne Construction works on one building at a time. When it is time to select a building to work on, the building with the lowest executed_time (ties are broken by selecting the building with the lowest buildingNum) is selected. The selected building is worked on until complete or for 5 days, whichever happens first. If the building completes during this period its number and day of completion is output and it is removed from the data structures. Otherwise, the building’s executed_time is updated. In both cases, Wayne Construction selects the next building to work on using the selection rule. When no building remains, the completion date of the new city is output.
  
  
  
-Input and Output Requirements
- 
-Input Format
-Input test data will be given in the following format.
- 
-Insert(buildingNum, total_time)
-Print(buildingNum)
-Print (buildingNum1, buildingNum2)
- 
-You cannot insert a building for construction to the data structures unless global time equals to the arrival time of the construction. All the time data are given in days.
+Cannot insert a building for construction to the data structures unless global time equals to the arrival time of the construction. All the time data are given in days.
  
 Following is an example of input.
  
@@ -58,7 +49,7 @@ Output Format
 
 . Other oupt includes completion date of each building and completion date of city.
  
-All output should go to a file named “output_file.txt”.
+All output goes to a file named “output_file.txt”.
  
 
 Makefile: The makefile is designed such that ‘make’ command compiles the source code and produces executable file. 
